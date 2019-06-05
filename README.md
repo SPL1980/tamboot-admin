@@ -7,6 +7,7 @@ Tamboot Admin是一个基于 [Tamboot](https://github.com/chensheng/tamboot.git)
 * [下载项目](#下载项目)
 * [最小配置](#最小配置)
 * [运行项目](#运行项目)
+* [接口返回值](#接口返回值)
 
 ### 安装依赖 <div id="安装依赖"></div>
 由于[Tamboot](https://github.com/chensheng/tamboot.git)尚未发布到maven仓库，因此运行项目前，需要先在本地编译安装Tamboot依赖。
@@ -57,3 +58,28 @@ server:
 $ cd tamboot-admin
 $ mvn spring-boot:run
 ```
+
+### 接口返回值 <div id="接口返回值"></div>
+所有接口统一返回json格式数据，返回格式如下：
+```json
+{
+  "code": "1",
+  "msg": "success",
+  "data": null
+}
+```
+
+字段|说明
+-----|-----
+code|状态码。除了使用框架定义的状态码，开发者也可以自定义状态码。具体见下表。
+msg|提示信息
+data|数据。不同接口返回不同数据。
+
+code值|说明
+-----|-----
+0|失败
+1|成功
+1001|未登录
+1002|无权限
+9999|系统异常
+
