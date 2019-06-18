@@ -1,6 +1,7 @@
 FROM openjdk:8-jdk-alpine
+WORKDIR /usr/local
 VOLUME /tmp
-RUN mkdir /usr/local/app && mkdir /usr/local/app/config && mkdir /usr/local/app/logs
-COPY target/*.jar /usr/local/app/app.jar
+RUN mkdir app && mkdir app/config && mkdir app/logs
+COPY target/*.jar app/app.jar
 ENV JAVA_OPTS=""
-ENTRYPOINT ["java", "${JAVA_OPTS}", "-jar","/usr/local/app/app.jar"]
+ENTRYPOINT ["java", "${JAVA_OPTS}", "-jar","app/app.jar"]
