@@ -1,6 +1,5 @@
 FROM openjdk:8-jdk-alpine
 VOLUME /tmp
-RUN mvn package
 RUN mkdir /usr/local/app
 RUN mkdir /usr/local/app/config
 RUN mkdir /usr/local/app/logs
