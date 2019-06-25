@@ -5,45 +5,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.tamboot.admin.system.mapper.SystemMenuMapper">
     <resultMap type="com.tamboot.admin.system.model.SystemMenuModel" id="Model"></resultMap>
 
-    <insert id="insert">
-        insert into system_menu (
-            path,
-            locale,
-            name,
-            icon,
-            parent,
-            order_index
-        ) values (
-            #{path},
-            #{locale},
-            #{name},
-            #{icon},
-            #{parent},
-            #{orderIndex}
-        )
-    </insert>
-
-    <update id="updateById">
-        update system_menu
-            <set>
-                <if test="@com.tamboot.common.utils.StringUtils@isNotEmpty(path)">path = #{path},</if>
-                <if test="locale != null">locale = #{locale},</if>
-                <if test="@com.tamboot.common.utils.StringUtils@isNotEmpty(name)">name = #{name},</if>
-                <if test="orderIndex != null">order_index = #{orderIndex},</if>
-                icon = #{icon},
-                parent = #{parent}
-            </set>
-        where id = #{id}
-    </update>
-
-    <delete id="deleteById">
-        delete from system_menu where id = #{id}
-    </delete>
-
-    <select id="selectOneById" resultMap="Model">
-        select * from system_menu where id = #{id}
-    </select>
-
     <select id="selectAllByParent" resultMap="Model">
         select * from system_menu where parent = #{parent}
     </select>

@@ -5,37 +5,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.tamboot.admin.system.mapper.SystemRoleMapper">
     <resultMap type="com.tamboot.admin.system.model.SystemRoleModel" id="Model"></resultMap>
 
-    <insert id="insert">
-        insert into system_role (
-            role_code,
-            role_name,
-            role_desc
-        ) values (
-            #{roleCode},
-            #{roleName},
-            #{roleDesc}
-        )
-    </insert>
-
-    <update id="updateById">
-        update system_role
-            <set>
-                <if test="@com.tamboot.common.utils.StringUtils@isNotEmpty(roleName)">role_name = #{roleName},</if>
-                <if test="@com.tamboot.common.utils.StringUtils@isNotEmpty(roleDesc)">role_desc = #{roleDesc}</if>
-            </set>
-        where id = #{id}
-    </update>
-
-    <delete id="deleteById">
-        delete from system_role where id = #{id}
-    </delete>
-
     <select id="selectOneByRoleCode" resultMap="Model">
         select * from system_role where role_code = #{roleCode} limit 0,1
-    </select>
-
-    <select id="selectOneById" resultMap="Model">
-        select * from system_role where id = #{id} limit 0,1
     </select>
 
     <select id="pageByCondition" resultMap="Model">

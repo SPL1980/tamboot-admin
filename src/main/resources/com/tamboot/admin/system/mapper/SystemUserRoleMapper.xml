@@ -5,16 +5,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.tamboot.admin.system.mapper.SystemUserRoleMapper">
     <resultMap type="com.tamboot.admin.system.model.SystemUserRoleModel" id="Model"></resultMap>
 
-    <insert id="insert">
-        insert into system_user_role (
-            user_id,
-            role_code
-        ) values (
-            #{userId},
-            #{roleCode}
-        )
-    </insert>
-
     <delete id="deleteByRoleCode">
         delete from system_user_role where role_code = #{roleCode}
     </delete>

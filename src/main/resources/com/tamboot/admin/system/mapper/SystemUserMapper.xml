@@ -5,31 +5,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.tamboot.admin.system.mapper.SystemUserMapper">
     <resultMap id="Model" type="com.tamboot.admin.system.model.SystemUserModel"></resultMap>
     <resultMap id="Dto" type="com.tamboot.admin.system.dto.SystemUserDto"></resultMap>
-
-    <insert id="insert">
-        insert into system_user (
-            username,
-            password,
-            status
-        ) values (
-            #{username},
-            #{password},
-            #{status}
-        )
-    </insert>
-
-    <update id="updateById">
-        update system_user
-        <set>
-            <if test="@com.tamboot.common.utils.StringUtils@isNotEmpty(password)">password = #{password},</if>
-            <if test="status != null">status = #{status}</if>
-        </set>
-        where id = #{id}
-    </update>
-
-    <select id="selectOneById" resultMap="Model">
-        select * from system_user where id = #{id}
-    </select>
     
     <select id="selectOneByUsername" resultMap="Model">
         select * from system_user where username = #{username} limit 0,1
