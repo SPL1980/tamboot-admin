@@ -6,13 +6,13 @@
 
     <groupId>com.tamboot</groupId>
     <artifactId>tamboot-admin</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0.RELEASE</version>
 
     <dependencies>
         <dependency>
             <groupId>com.tamboot</groupId>
             <artifactId>tamboot-webapp</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0.0.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
