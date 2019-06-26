@@ -9,7 +9,7 @@ import com.tamboot.admin.system.mapper.SystemRoleMenuMapper;
 import com.tamboot.admin.system.model.SystemMenuModel;
 import com.tamboot.admin.system.model.SystemRoleModel;
 import com.tamboot.admin.system.service.SystemMenuService;
-import com.tamboot.common.utils.StringUtils;
+import com.tamboot.common.tools.text.TextUtil;
 import com.tamboot.web.config.BusinessException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +45,7 @@ public class SystemMenuServiceImpl implements SystemMenuService {
         if (form.getOrderIndex() == null) {
             form.setOrderIndex(0);
         }
-        if (StringUtils.isEmpty(form.getIcon())) {
+        if (TextUtil.isEmpty(form.getIcon())) {
             form.setIcon(null);
         }
 
@@ -65,7 +65,7 @@ public class SystemMenuServiceImpl implements SystemMenuService {
         if (form.getOrderIndex() == null) {
             form.setOrderIndex(0);
         }
-        if (StringUtils.isEmpty(form.getIcon())) {
+        if (TextUtil.isEmpty(form.getIcon())) {
             form.setIcon(null);
         }
 

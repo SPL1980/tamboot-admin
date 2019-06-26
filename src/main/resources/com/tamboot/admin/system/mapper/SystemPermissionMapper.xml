@@ -18,8 +18,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             *
         from system_permission
         <where>
-            <if test="@com.tamboot.common.utils.StringUtils@isNotEmpty(condition.urlLike)">url like concat('%', #{condition.urlLike}, '%')</if>
-            <if test="@com.tamboot.common.utils.StringUtils@isNotEmpty(condition.roleCode)">and roles like concat('%', #{condition.roleCode}, '%')</if>
+            <if test="@com.tamboot.common.tools.text.TextUtil@isNotEmpty(condition.urlLike)">url like concat('%', #{condition.urlLike}, '%')</if>
+            <if test="@com.tamboot.common.tools.text.TextUtil@isNotEmpty(condition.roleCode)">and roles like concat('%', #{condition.roleCode}, '%')</if>
         </where>
         order by LENGTH(url) asc
     </select>

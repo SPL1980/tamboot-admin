@@ -15,7 +15,7 @@ import com.tamboot.admin.system.model.SystemRoleModel;
 import com.tamboot.admin.system.model.SystemUserModel;
 import com.tamboot.admin.system.model.SystemUserRoleModel;
 import com.tamboot.admin.system.service.SystemUserService;
-import com.tamboot.common.utils.StringUtils;
+import com.tamboot.common.tools.text.TextUtil;
 import com.tamboot.security.core.PasswordEncoderFactory;
 import com.tamboot.web.config.BusinessException;
 import org.springframework.beans.BeanUtils;
@@ -44,7 +44,7 @@ public class SystemUserServiceImpl implements SystemUserService {
 
     @Override
     public SystemUserModel findByUsername(String username) {
-        if (StringUtils.isEmpty(username)) {
+        if (TextUtil.isEmpty(username)) {
             return null;
         }
 
@@ -72,8 +72,8 @@ public class SystemUserServiceImpl implements SystemUserService {
         Page<SystemUserDto> dtoPage = systemUserMapper.pageDtoByCondition(form.getPageNum(), form.getPageSize(), condition);
         if (!CollectionUtils.isEmpty(dtoPage.getResult())) {
             for (SystemUserDto userDto : dtoPage.getResult()) {
-                String[] roleCodeArr = StringUtils.splitByComma(userDto.getRoleCodes());
-                String[] roleNameArr = StringUtils.splitByComma(userDto.getRoleNames());
+                String[] roleCodeArr = TextUtil.splitByComma(userDto.getRoleCodes());
+                String[] roleNameArr = TextUtil.splitByComma(userDto.getRoleNames());
                 if (roleCodeArr != null) {
                     userDto.setRoleCodeList(Arrays.asList(roleCodeArr));
                 } else {

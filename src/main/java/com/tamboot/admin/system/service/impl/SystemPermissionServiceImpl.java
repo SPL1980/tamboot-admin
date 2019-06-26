@@ -11,7 +11,7 @@ import com.tamboot.admin.system.mapper.SystemRoleMapper;
 import com.tamboot.admin.system.model.SystemPermissionModel;
 import com.tamboot.admin.system.model.SystemRoleModel;
 import com.tamboot.admin.system.service.SystemPermissionService;
-import com.tamboot.common.utils.StringUtils;
+import com.tamboot.common.tools.text.TextUtil;
 import com.tamboot.security.permission.RoleBasedPermission;
 import com.tamboot.security.permission.RoleBasedPermissionRepository;
 import com.tamboot.web.config.BusinessException;
@@ -45,7 +45,7 @@ public class SystemPermissionServiceImpl implements SystemPermissionService {
         List<RoleBasedPermission> roleBasedPermissions = new ArrayList<RoleBasedPermission>(permissions.size());
         for (SystemPermissionModel permission : permissions) {
             roleBasedPermissions.add(new RoleBasedPermission(permission.getUrl())
-                    .addRoles(StringUtils.splitByComma(permission.getRoles())));
+                    .addRoles(TextUtil.splitByComma(permission.getRoles())));
         }
         return roleBasedPermissions;
     }
@@ -70,7 +70,7 @@ public class SystemPermissionServiceImpl implements SystemPermissionService {
 
         SystemPermissionModel permission = new SystemPermissionModel();
         permission.setUrl(form.getUrl());
-        permission.setRoles(StringUtils.concatByComma(roleCodes));
+        permission.setRoles(TextUtil.concatByComma(roleCodes));
         systemPermissionMapper.insert(permission);
         return permission;
     }
@@ -99,7 +99,7 @@ public class SystemPermissionServiceImpl implements SystemPermissionService {
         }
 
         permission.setUrl(form.getUrl());
-        permission.setRoles(StringUtils.concatByComma(roleCodes));
+        permission.setRoles(TextUtil.concatByComma(roleCodes));
         systemPermissionMapper.updateById(permission);
         return permission;
     }
@@ -163,7 +163,7 @@ public class SystemPermissionServiceImpl implements SystemPermissionService {
 
         Set<String> allRoleCodes = new HashSet<String>();
         for (SystemPermissionModel model : models) {
-            String[] roleCodes = StringUtils.splitByComma(model.getRoles());
+            String[] roleCodes = TextUtil.splitByComma(model.getRoles());
             allRoleCodes.addAll(Arrays.asList(roleCodes));
         }
 
@@ -182,7 +182,7 @@ public class SystemPermissionServiceImpl implements SystemPermissionService {
 
             List<String> roleCodes = new ArrayList<String>();
             List<String> roleNames = new ArrayList<String>();
-            String[] roleCodeArr = StringUtils.splitByComma(model.getRoles());
+            String[] roleCodeArr = TextUtil.splitByComma(model.getRoles());
             for (String roleCode : roleCodeArr) {
                 roleCodes.add(roleCode);
                 roleNames.add(roleCodeNameMap.get(roleCode));
