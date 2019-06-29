@@ -4,20 +4,37 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>com.tamboot</groupId>
+        <artifactId>tamboot-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
     <groupId>com.tamboot</groupId>
     <artifactId>tamboot-admin</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+
+    <properties>
+        <tamboot.version>${project.parent.version}</tamboot.version>
+        <mysql-connector-java.version>8.0.15</mysql-connector-java.version>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.tamboot</groupId>
             <artifactId>tamboot-webapp</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>${tamboot.version}</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.15</version>
+            <version>${mysql-connector-java.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.tamboot</groupId>
+            <artifactId>tamboot-restdocs-mockmvc</artifactId>
+            <version>${tamboot.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -36,5 +53,71 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <excludes>
+                                <exclude>**/*DocTest.java</exclude>
+                            </excludes>
+                            <argLine>-Dfile.encoding=UTF-8</argLine>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>doc</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <includes>
+                                <include>**/*DocTest.java</include>
+                            </includes>
+                            <argLine>-Dfile.encoding=UTF-8</argLine>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctor-maven-plugin</artifactId>
+                        <version>1.5.3</version>
+                        <executions>
+                            <execution>
+                                <id>generate-docs</id>
+                                <phase>prepare-package</phase>
+                                <goals>
+                                    <goal>process-asciidoc</goal>
+                                </goals>
+                                <configuration>
+                                    <backend>html</backend>
+                                    <doctype>book</doctype>
+                                    <outputDirectory>${basedir}/src/main/apidoc</outputDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.springframework.restdocs</groupId>
+                                <artifactId>spring-restdocs-asciidoctor</artifactId>
+                                <version>2.0.3.RELEASE</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>

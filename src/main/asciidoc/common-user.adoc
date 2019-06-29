@@ -1,0 +1,7 @@
+== 个人信息
+
+=== 获取个人信息
+operation::common-user-details[snippets='curl-request,request-parameters,http-response,response-fields']
+
+=== 修改密码
+operation::common-user-updatePassword[snippets='curl-request,request-fields,http-response,response-fields']

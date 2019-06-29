@@ -1,16 +1,31 @@
 package com.tamboot.admin.constants;
 
 public enum UserStatus {
-    DISABLED(0),
-    ENABLED(1);
+    DISABLED(0, "停用"),
+    ENABLED(1, "启用");
 
-    private int value;
+    private Integer code;
 
-    UserStatus(int value) {
-        this.value = value;
+    private String msg;
+
+    UserStatus(Integer code, String msg) {
+        this.code = code;
+        this.msg = msg;
     }
 
-    public int value() {
-        return value;
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 }

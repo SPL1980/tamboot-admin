@@ -1,0 +1,7 @@
+== 用户管理
+
+=== 用户分页
+operation::system-user-page[snippets='curl-request,request-parameters,http-response,response-fields']
+
+=== 启用用户
+operation::system-user-enable[snippets='curl-request,path-parameters,http-response,response-fields']
