@@ -1,0 +1,4 @@
+== 个人菜单
+
+=== 获取菜单树
+operation::common-menu-tree[snippets='curl-request,request-parameters,http-response,response-fields']

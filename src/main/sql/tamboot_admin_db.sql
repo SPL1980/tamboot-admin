@@ -106,8 +106,8 @@ CREATE TABLE `system_role` (
 -- ----------------------------
 -- Records of system_role
 -- ----------------------------
-INSERT INTO `system_role` VALUES ('1', '6', null, null, '2019-06-02 17:03:25', '1', 'MANAGER', '管理员', '进行系统的日常运维');
-INSERT INTO `system_role` VALUES ('6533636090576769024', '0', '2019-05-13 17:37:13', '1', null, null, 'USER', '用户', '普通用户');
+INSERT INTO `system_role` VALUES ('1', '0', null, null, '2019-06-02 17:03:25', '1', 'MANAGER', '管理员', '进行系统的日常运维');
+INSERT INTO `system_role` VALUES ('2', '0', '2019-05-13 17:37:13', '1', null, null, 'USER', '用户', '普通用户');
 
 -- ----------------------------
 -- Table structure for system_role_menu
@@ -177,8 +177,8 @@ CREATE TABLE `system_user` (
 -- ----------------------------
 -- Records of system_user
 -- ----------------------------
-INSERT INTO `system_user` VALUES ('1', '3', null, null, '2019-06-02 22:43:43', '1', 'admin', '{bcrypt}$2a$10$XlxuthlC.aiqv4FQ0vk8N.2ECtkg4.4dKrAsRN9upqDLY5Or.YZja', '1');
-INSERT INTO `system_user` VALUES ('2', '8', null, null, '2019-06-02 12:56:17', '1', 'chensheng', '{bcrypt}$2a$10$3lRGVEr06pErbsUxDqh1JeNocMA.pn/9SrRbS4WfyrZgXqRC87tyO', '0');
+INSERT INTO `system_user` VALUES ('1', '0', null, null, '2019-06-02 22:43:43', '1', 'admin', '{bcrypt}$2a$10$XlxuthlC.aiqv4FQ0vk8N.2ECtkg4.4dKrAsRN9upqDLY5Or.YZja', '1');
+INSERT INTO `system_user` VALUES ('2', '0', null, null, '2019-06-02 12:56:17', '1', 'user', '{bcrypt}$2a$10$3lRGVEr06pErbsUxDqh1JeNocMA.pn/9SrRbS4WfyrZgXqRC87tyO', '0');
 
 -- ----------------------------
 -- Table structure for system_user_role

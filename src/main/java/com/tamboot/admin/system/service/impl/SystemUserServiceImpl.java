@@ -101,11 +101,11 @@ public class SystemUserServiceImpl implements SystemUserService {
             throw new BusinessException("用户不存在");
         }
 
-        if (user.getStatus() != null && user.getStatus().equals(UserStatus.ENABLED.value())) {
+        if (UserStatus.ENABLED.getCode().equals(user.getStatus())) {
             throw new BusinessException("用户已经启用过");
         }
 
-        user.setStatus(UserStatus.ENABLED.value());
+        user.setStatus(UserStatus.ENABLED.getCode());
         systemUserMapper.updateById(user);
         return true;
     }
@@ -122,11 +122,11 @@ public class SystemUserServiceImpl implements SystemUserService {
             throw new BusinessException("用户不存在");
         }
 
-        if (user.getStatus() != null && user.getStatus().equals(UserStatus.DISABLED.value())) {
+        if (UserStatus.DISABLED.getCode().equals(user.getStatus())) {
             throw new BusinessException("用户已经停用过");
         }
 
-        user.setStatus(UserStatus.DISABLED.value());
+        user.setStatus(UserStatus.DISABLED.getCode());
         systemUserMapper.updateById(user);
         return true;
     }
@@ -144,7 +144,7 @@ public class SystemUserServiceImpl implements SystemUserService {
         SystemUserModel user = new SystemUserModel();
         user.setUsername(form.getUsername());
         user.setPassword(encodedPassword);
-        user.setStatus(UserStatus.ENABLED.value());
+        user.setStatus(UserStatus.ENABLED.getCode());
         systemUserMapper.insert(user);
         user.setPassword(null);
         return user;

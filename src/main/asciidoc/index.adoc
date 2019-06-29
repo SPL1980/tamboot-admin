@@ -1,0 +1,22 @@
+= API 文档
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toc-title: 目录
+:toclevels: 2
+:sectlinks:
+:operation-curl-request-title: 请求示例
+:operation-http-response-title: 返回示例
+:operation-request-fields-title: 请求参数
+:operation-request-parameters-title: 请求参数
+:operation-path-parameters-title: 路径参数
+:operation-response-fields-title: 返回域
+
+include::dictionary.adoc[]
+
+include::common-menu.adoc[]
+
+include::common-user.adoc[]
+
+include::system-user.adoc[]
