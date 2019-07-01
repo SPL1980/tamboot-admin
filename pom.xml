@@ -61,6 +61,14 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources</directory>
+                        <excludes>
+                            <exclude>apidoc/*.html</exclude>
+                        </excludes>
+                    </resource>
+                </resources>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -78,6 +86,11 @@
         <profile>
             <id>doc</id>
             <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources</directory>
+                    </resource>
+                </resources>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -103,7 +116,7 @@
                                 <configuration>
                                     <backend>html</backend>
                                     <doctype>book</doctype>
-                                    <outputDirectory>${basedir}/src/main/apidoc</outputDirectory>
+                                    <outputDirectory>${basedir}/src/main/resources/apidoc</outputDirectory>
                                 </configuration>
                             </execution>
                         </executions>

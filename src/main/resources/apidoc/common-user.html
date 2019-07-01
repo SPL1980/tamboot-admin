@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.3">
-<title>用户管理</title>
+<title>个人信息</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -422,21 +422,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_用户管理">用户管理</h2>
+<h2 id="_个人信息">个人信息</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_用户分页">用户分页</h3>
+<h3 id="_获取个人信息">获取个人信息</h3>
 <div class="sect3">
-<h4 id="_用户分页_curl_request">Curl request</h4>
+<h4 id="_获取个人信息_curl_request">Curl request</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'http://localhost:8080/system/user/page?pageNum=1&amp;pageSize=20' -i -X GET \
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'http://localhost:8080/common/user/details' -i -X GET \
     -H 'Accept: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_用户分页_request_parameters">Request parameters</h4>
+<h4 id="_获取个人信息_request_parameters">Request parameters</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -448,44 +448,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pageNum</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">页码</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pageSize</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">分页大小</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>usernameLike</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">用户名，支持模糊查询。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>status</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">用户状态</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roleCode</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">拥有的角色编码</p></td>
-</tr>
-</tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_用户分页_http_response">HTTP response</h4>
+<h4 id="_获取个人信息_http_response">HTTP response</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Length: 1686
+Content-Length: 302
 Content-Type: application/json;charset=UTF-8
 
-{"code":"1","msg":"success","data":{"pageNum":1,"pageSize":20,"total":11,"pages":1,"result":[{"id":"6540561428519063553","username":"陈生","status":1,"roleCodes":"USER","roleNames":"用户","roleCodeList":["USER"],"roleNameList":["用户"]},{"id":"6540561215859462144","username":"chen_sheng","status":1,"roleCodes":null,"roleNames":null,"roleCodeList":[],"roleNameList":[]},{"id":"6533613136765784064","username":"test","status":1,"roleCodes":"USER","roleNames":"用户","roleCodeList":["USER"],"roleNameList":["用户"]},{"id":"1","username":"admin","status":1,"roleCodes":"MANAGER","roleNames":"管理员","roleCodeList":["MANAGER"],"roleNameList":["管理员"]},{"id":"2","username":"user","status":1,"roleCodes":"USER","roleNames":"用户","roleCodeList":["USER"],"roleNameList":["用户"]},{"id":"6540843655173771268","username":"PP","status":0,"roleCodes":"USER,MANAGER","roleNames":"用户,管理员","roleCodeList":["USER","MANAGER"],"roleNameList":["用户","管理员"]},{"id":"6540843575180005379","username":"OO","status":0,"roleCodes":null,"roleNames":null,"roleCodeList":[],"roleNameList":[]},{"id":"6540843400587907074","username":"kk","status":0,"roleCodes":null,"roleNames":null,"roleCodeList":[],"roleNameList":[]},{"id":"6540826130989977601","username":"JJJ","status":0,"roleCodes":null,"roleNames":null,"roleCodeList":[],"roleNameList":[]},{"id":"6540824619102769152","username":"TTT","status":0,"roleCodes":"MANAGER,USER","roleNames":"管理员,用户","roleCodeList":["MANAGER","USER"],"roleNameList":["管理员","用户"]},{"id":"3","username":"userAuto","status":0,"roleCodes":"USER","roleNames":"用户","roleCodeList":["USER"],"roleNameList":["用户"]}]}}</code></pre>
+{"code":"1","msg":"success","data":{"userId":"2","password":"{bcrypt}$2a$10$Qyqa2eKtB6XgbZn/q/lDJuIsY5sFJMf6twUhEShQd3bzjSd.tucbK","username":"user","authorities":[{"authority":"ROLE_USER"}],"roles":["USER"],"accountNonExpired":true,"accountNonLocked":true,"credentialsNonExpired":true,"enabled":true}}</code></pre>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_用户分页_response_fields">Response fields</h4>
+<h4 id="_获取个人信息_response_fields">Response fields</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 33%;">
@@ -516,117 +494,115 @@ Content-Type: application/json;charset=UTF-8
 <td class="tableblock halign-left valign-top"><p class="tableblock">数据</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.pageNum</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">页码</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.pageSize</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">分页大小</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.total</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">总记录数</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.pages</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">总页数</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.result[]</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">当前页记录数</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.result[].id</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.userId</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">用户id</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.result[].username</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.username</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">用户名</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.result[].status</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">状态</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.result[].roleCodeList[]</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">所有的角色编码</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.result[].roleNameList[]</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">所有的角色名称</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.result[].roleCodes</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.password</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">所有的角色编码，以逗号分隔。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">密码</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.result[].roleNames</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.accountNonExpired</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">账号未过期</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.accountNonLocked</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">账号未被锁</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.credentialsNonExpired</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">密码未过期</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.enabled</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用户是否启用</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.roles[]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">拥有的角色编码</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.authorities[]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">权限信息</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>data.authorities[].authority</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">所有的角色名称，以逗号分隔。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">权限值</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_启用用户">启用用户</h3>
+<h3 id="_修改密码">修改密码</h3>
 <div class="sect3">
-<h4 id="_启用用户_curl_request">Curl request</h4>
+<h4 id="_修改密码_curl_request">Curl request</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'http://localhost:8080/system/user/enable/2' -i -X POST \
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'http://localhost:8080/common/user/updatePassword' -i -X POST \
     -H 'Accept: application/json;charset=UTF-8' \
-    -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -d '{"oldPassword":"Qwb123@456","newPassword":"Wbm@123456q"}'</code></pre>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_启用用户_path_parameters">Path parameters</h4>
+<h4 id="_修改密码_request_fields">Request fields</h4>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 1. /system/user/enable/{userId}</caption>
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userId</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">用户id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>oldPassword</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* 原密码</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>newPassword</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* 新密码，密码必须由数字、字母、特殊字符(_#@!)组成，且不能少于8位。</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_启用用户_http_response">HTTP response</h4>
+<h4 id="_修改密码_http_response">HTTP response</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Length: 54
+Content-Length: 40
 Content-Type: application/json;charset=UTF-8
 
-{"code":"0","msg":"用户已经启用过","data":null}</code></pre>
+{"code":"1","msg":"success","data":null}</code></pre>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_启用用户_response_fields">Response fields</h4>
+<h4 id="_修改密码_response_fields">Response fields</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 33%;">
@@ -660,7 +636,7 @@ Content-Type: application/json;charset=UTF-8
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-06-29 13:45:28 CST
+Last updated 2019-07-01 00:31:37 CST
 </div>
 </div>
 </body>
