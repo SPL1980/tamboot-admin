@@ -21,11 +21,11 @@
             <property name="forceBigDecimals" value="false" />
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="${mbg.packageName}" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="${mbg.package}" targetProject="src/main/java">
             <property name="rootClass" value="com.tamboot.webapp.core.BaseModel"/>
         </javaModelGenerator>
 
-        <table tableName="${mbg.tableName}" domainObjectName="${mbg.modelName}" >
+        <table tableName="${mbg.table}" domainObjectName="${mbg.model}" >
             <property name="useActualColumnNames" value="false"/>
             <property name="modelOnly" value="true"/>
         </table>
