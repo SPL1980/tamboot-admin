@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="MysqlTables" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="${mbg.jdbcUrl}?useUnicode=true&amp;characterEncoding=utf-8&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=Hongkong"
+                        userId="${mbg.jdbcUsername}"
+                        password="${mbg.jdbcPassword}">
+            <property name="nullCatalogMeansCurrent" value="true" />
+        </jdbcConnection>
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.tamboot.admin.${mbg.moduleName}.model" targetProject="src/main/java">
+            <property name="rootClass" value="com.tamboot.webapp.core.BaseModel"/>
+        </javaModelGenerator>
+
+        <table tableName="${mbg.tableName}" domainObjectName="${mbg.modelName}" >
+            <property name="useActualColumnNames" value="false"/>
+            <property name="modelOnly" value="true"/>
+        </table>
+
+    </context>
+</generatorConfiguration>
