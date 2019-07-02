@@ -7,12 +7,12 @@
     <parent>
         <groupId>com.tamboot</groupId>
         <artifactId>tamboot-parent</artifactId>
-        <version>1.1.0.RELEASE</version>
+        <version>1.1.1.RELEASE</version>
     </parent>
 
     <groupId>com.tamboot</groupId>
     <artifactId>tamboot-admin</artifactId>
-    <version>1.1.0.RELEASE</version>
+    <version>1.1.1.RELEASE</version>
 
     <properties>
         <tamboot.version>${project.parent.version}</tamboot.version>
