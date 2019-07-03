@@ -1,6 +1,9 @@
 # Tamboot Admin (后端)
 Tamboot Admin是一个基于 [Tamboot](https://github.com/chensheng/tamboot.git)（一个基于[spring boot](https://spring.io/projects/spring-boot)的快速开发框架） 的服务端脚手架项目，实现了企业级应用常见的用户管理、角色管理、权限管理、菜单管理等基本功能，开发者可基于此快速搭建系统。
 
+[Demo演示地址](http://www.tamboot.com)
+
+
 ## 快速上手教程
 
 * [安装依赖](#安装依赖)
