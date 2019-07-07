@@ -1,6 +1,6 @@
 package com.tamboot.admin.system.model;
 
-import com.tamboot.webapp.core.BaseModel;
+import com.tamboot.mybatis.core.BaseModel;
 
 public class SystemPermissionModel extends BaseModel {
     private static final long serialVersionUID = -2316648409058071825L;

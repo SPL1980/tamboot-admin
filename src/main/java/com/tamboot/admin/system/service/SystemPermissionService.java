@@ -22,7 +22,7 @@ public interface SystemPermissionService {
      * @param form {@code form.url} required<br>
      *              {@code form.roles} required
      * @return permission item
-     * @throws com.tamboot.web.config.BusinessException if required form fields not set, or {@code form.url} already exists
+     * @throws com.tamboot.web.core.BusinessException if required form fields not set, or {@code form.url} already exists
      */
     SystemPermissionModel create(CreatePermissionForm form);
 
@@ -32,7 +32,7 @@ public interface SystemPermissionService {
      *              {@code form.url} required<br>
      *              {@code form.roles} required
      * @return updated permission item
-     * @throws com.tamboot.web.config.BusinessException if required form fields not set, or {@code form.url} already exists
+     * @throws com.tamboot.web.core.BusinessException if required form fields not set, or {@code form.url} already exists
      */
     SystemPermissionModel update(UpdatePermissionForm form);
 
@@ -62,7 +62,7 @@ public interface SystemPermissionService {
      * Delete a permission item
      * @param id required
      * @return true if success, otherwise false
-     * @throws com.tamboot.web.config.BusinessException if {@code id} is null, or permission item not exists
+     * @throws com.tamboot.web.core.BusinessException if {@code id} is null, or permission item not exists
      */
     boolean delete(Long id);
 }

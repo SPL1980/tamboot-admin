@@ -15,7 +15,7 @@ public interface CommonUserService {
      * @param form {@code form.oldPassword} required<br/>
      *              {@code form.newPassword} required
      * @return true if success, otherwise false
-     * @throws com.tamboot.web.config.BusinessException if required form fields not set, or password format not correct
+     * @throws com.tamboot.web.core.BusinessException if required form fields not set, or password format not correct
      */
     boolean updatePassword(UpdatePasswordForm form);
 }

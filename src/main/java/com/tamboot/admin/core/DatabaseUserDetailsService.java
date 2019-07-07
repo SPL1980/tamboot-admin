@@ -19,7 +19,6 @@ public class DatabaseUserDetailsService implements UserDetailsService {
     @Autowired
     private SystemRoleService systemRoleService;
 
-
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         SystemUserModel user = systemUserService.findByUsername(username);

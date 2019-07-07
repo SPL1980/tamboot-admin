@@ -455,10 +455,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Length: 302
+Content-Length: 317
 Content-Type: application/json;charset=UTF-8
 
-{"code":"1","msg":"success","data":{"userId":"2","password":"{bcrypt}$2a$10$Qyqa2eKtB6XgbZn/q/lDJuIsY5sFJMf6twUhEShQd3bzjSd.tucbK","username":"user","authorities":[{"authority":"ROLE_USER"}],"roles":["USER"],"accountNonExpired":true,"accountNonLocked":true,"credentialsNonExpired":true,"enabled":true}}</code></pre>
+{"code":"1","msg":"success","data":{"userId":"2","password":"{bcrypt}$2a$10$Qyqa2eKtB6XgbZn/q/lDJuIsY5sFJMf6twUhEShQd3bzjSd.tucbK","username":"user","authorities":[{"authority":"ROLE_USER"}],"roles":["USER"],"accountNonExpired":true,"accountNonLocked":true,"credentialsNonExpired":true,"enabled":true},"success":true}</code></pre>
 </div>
 </div>
 </div>
@@ -487,6 +487,11 @@ Content-Type: application/json;charset=UTF-8
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>msg</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">提示消息</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>success</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是否成功</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>data</code></p></td>
@@ -594,10 +599,10 @@ Content-Type: application/json;charset=UTF-8
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Length: 40
+Content-Length: 55
 Content-Type: application/json;charset=UTF-8
 
-{"code":"1","msg":"success","data":null}</code></pre>
+{"code":"1","msg":"success","data":null,"success":true}</code></pre>
 </div>
 </div>
 </div>
@@ -627,6 +632,11 @@ Content-Type: application/json;charset=UTF-8
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">提示消息</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>success</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是否成功</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -636,7 +646,7 @@ Content-Type: application/json;charset=UTF-8
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-07-01 00:31:37 CST
+Last updated 2019-07-07 03:06:51 CST
 </div>
 </div>
 </body>

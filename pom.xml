@@ -6,17 +6,16 @@
 
     <parent>
         <groupId>com.tamboot</groupId>
-        <artifactId>tamboot-parent</artifactId>
-        <version>1.1.1.RELEASE</version>
+        <artifactId>tamboot-starter</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <groupId>com.tamboot</groupId>
     <artifactId>tamboot-admin</artifactId>
-    <version>1.1.1.RELEASE</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <properties>
         <tamboot.version>${project.parent.version}</tamboot.version>
-        <mysql-connector-java.version>8.0.15</mysql-connector-java.version>
         <asciidoctor-maven-plugin.version>1.5.3</asciidoctor-maven-plugin.version>
         <spring-restdocs-asciidoctor.version>2.0.3.RELEASE</spring-restdocs-asciidoctor.version>
         <mybatis-generator-maven-plugin.version>1.3.7</mybatis-generator-maven-plugin.version>
@@ -29,17 +28,18 @@
         <dependency>
             <groupId>com.tamboot</groupId>
             <artifactId>tamboot-webapp</artifactId>
-            <version>${tamboot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.tamboot</groupId>
+            <artifactId>tamboot-mybatis</artifactId>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql-connector-java.version}</version>
         </dependency>
         <dependency>
             <groupId>com.tamboot</groupId>
             <artifactId>tamboot-restdocs-mockmvc</artifactId>
-            <version>${tamboot.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

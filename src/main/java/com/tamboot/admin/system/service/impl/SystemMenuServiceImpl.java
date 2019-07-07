@@ -10,7 +10,7 @@ import com.tamboot.admin.system.model.SystemMenuModel;
 import com.tamboot.admin.system.model.SystemRoleModel;
 import com.tamboot.admin.system.service.SystemMenuService;
 import com.tamboot.common.tools.text.TextUtil;
-import com.tamboot.web.config.BusinessException;
+import com.tamboot.web.core.BusinessException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

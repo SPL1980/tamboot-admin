@@ -4,7 +4,7 @@ import com.tamboot.admin.constants.UserStatus;
 import com.tamboot.restdocs.mockmvc.AsciidocConfig;
 import com.tamboot.restdocs.mockmvc.AsciidocGenerator;
 import com.tamboot.restdocs.mockmvc.TambootDocTest;
-import com.tamboot.webapp.core.ResponseType;
+import com.tamboot.webapp.web.ResponseType;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;

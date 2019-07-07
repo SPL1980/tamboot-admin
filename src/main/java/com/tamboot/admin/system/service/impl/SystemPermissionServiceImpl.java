@@ -14,7 +14,7 @@ import com.tamboot.admin.system.service.SystemPermissionService;
 import com.tamboot.common.tools.text.TextUtil;
 import com.tamboot.security.permission.RoleBasedPermission;
 import com.tamboot.security.permission.RoleBasedPermissionRepository;
-import com.tamboot.web.config.BusinessException;
+import com.tamboot.web.core.BusinessException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
