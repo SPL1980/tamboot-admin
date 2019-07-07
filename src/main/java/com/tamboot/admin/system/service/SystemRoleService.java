@@ -23,7 +23,7 @@ public interface SystemRoleService {
      *              {@code from.roleName} required<br/>
      *              {@code form.roleDesc} optional
      * @return role
-     * @throws com.tamboot.web.config.BusinessException if required form fields not set, or {@code form.roleCode} format is wrong, or {@code form.roleCode} exists.
+     * @throws com.tamboot.web.core.BusinessException if required form fields not set, or {@code form.roleCode} format is wrong, or {@code form.roleCode} exists.
      */
     SystemRoleModel create(CreateRoleForm form);
 
@@ -41,7 +41,7 @@ public interface SystemRoleService {
      * Delete role and related {@code SystemUserRoleModel}, {@code SystemRoleMenuModel} records
      * @param id required, role id
      * @return true if success, otherwise false
-     * @throws com.tamboot.web.config.BusinessException if {@code id} is null, or role not exists
+     * @throws com.tamboot.web.core.BusinessException if {@code id} is null, or role not exists
      */
     boolean delete(Long id);
 
@@ -51,7 +51,7 @@ public interface SystemRoleService {
      *              {@code form.roleName} required<br>
      *              {@code form.roleDesc} optional
      * @return updated role
-     * @throws com.tamboot.web.config.BusinessException is required form fields not set, or role not exists, or role not exists
+     * @throws com.tamboot.web.core.BusinessException is required form fields not set, or role not exists, or role not exists
      */
     SystemRoleModel update(UpdateRoleForm form);
 
@@ -60,7 +60,7 @@ public interface SystemRoleService {
      * @param form {@code form.roleId} required<br>
      *              {@code form.menuIds} optional
      * @return true if success, otherwise false
-     * @throws com.tamboot.web.config.BusinessException if required form fields not set, or role not exists
+     * @throws com.tamboot.web.core.BusinessException if required form fields not set, or role not exists
      */
     boolean assignMenus(AssignMenusForm form);
 

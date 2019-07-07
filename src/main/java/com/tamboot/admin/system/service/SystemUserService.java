@@ -21,7 +21,7 @@ public interface SystemUserService {
      * @param form {@code form.userId} required<br/>
      *              {@code form.password} required
      * @return true if success to reset, otherwise false
-     * @throws com.tamboot.web.config.BusinessException if required form fields not set, or form.password format not correct, or user not found.
+     * @throws com.tamboot.web.core.BusinessException if required form fields not set, or form.password format not correct, or user not found.
      */
     boolean resetPassword(ResetPasswordForm form);
 
@@ -39,7 +39,7 @@ public interface SystemUserService {
      * Enable specified user
      * @param userId required
      * @return true if success, otherwise false
-     * @throws com.tamboot.web.config.BusinessException if {@code userId} is null, or user not found, or user is enabled
+     * @throws com.tamboot.web.core.BusinessException if {@code userId} is null, or user not found, or user is enabled
      */
     boolean enable(Long userId);
 
@@ -47,7 +47,7 @@ public interface SystemUserService {
      * Disable specified user
      * @param userId required
      * @return true if success, otherwise false
-     * @throws com.tamboot.web.config.BusinessException if {@code userId} is null, or user not found, or user is disabled
+     * @throws com.tamboot.web.core.BusinessException if {@code userId} is null, or user not found, or user is disabled
      */
     boolean disable(Long userId);
 
@@ -56,7 +56,7 @@ public interface SystemUserService {
      * @param form {@code form.username} required<br/>
      *              {@code form.password} required
      * @return the created user
-     * @throws com.tamboot.web.config.BusinessException if required form fields not set, or username exists, or {@code form.password} format wrong
+     * @throws com.tamboot.web.core.BusinessException if required form fields not set, or username exists, or {@code form.password} format wrong
      */
     SystemUserModel create(CreateUserForm form);
 
@@ -65,7 +65,7 @@ public interface SystemUserService {
      * @param form {@code form.userId} required<br>
      *              {@code form.roleCodes} requireds
      * @return true if success, otherwise false
-     * @throws com.tamboot.web.config.BusinessException if required form fields not set, or user not exists
+     * @throws com.tamboot.web.core.BusinessException if required form fields not set, or user not exists
      */
     boolean assignRoles(AssignRolesForm form);
 }

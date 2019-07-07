@@ -455,10 +455,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Length: 1294
+Content-Length: 1309
 Content-Type: application/json;charset=UTF-8
 
-{"code":"1","msg":"success","data":[{"id":"6533916193823133696","path":"/system","locale":null,"name":"系统配置","icon":"setting","orderIndex":0,"parent":null,"children":[{"id":"6533916797031157764","path":"/system/role","locale":null,"name":"角色管理","icon":null,"orderIndex":3,"parent":"6533916193823133696","children":[]}]},{"id":"6533917218659373061","path":"/user","locale":null,"name":"用户中心","icon":"user","orderIndex":2,"parent":null,"children":[{"id":"6533917345537069062","path":"/user/password","locale":null,"name":"修改密码","icon":null,"orderIndex":0,"parent":"6533917218659373061","children":[]}]},{"id":"6541132351248797696","path":"/frontdocs","locale":null,"name":"前端文档","icon":"read","orderIndex":3,"parent":null,"children":[{"id":"6541132579280523265","path":"/frontdocs/pageviewdoc","locale":null,"name":"分页组件","icon":null,"orderIndex":2,"parent":"6541132351248797696","children":[]},{"id":"6541585418129772545","path":"/frontdocs/createmodaldoc","locale":null,"name":"新建模态框","icon":null,"orderIndex":3,"parent":"6541132351248797696","children":[]},{"id":"6541595299213742082","path":"/frontdocs/updatemodaldoc","locale":null,"name":"修改模态框","icon":null,"orderIndex":4,"parent":"6541132351248797696","children":[]}]}]}</code></pre>
+{"code":"1","msg":"success","data":[{"id":"6533916193823133696","path":"/system","locale":null,"name":"系统配置","icon":"setting","orderIndex":0,"parent":null,"children":[{"id":"6533916797031157764","path":"/system/role","locale":null,"name":"角色管理","icon":null,"orderIndex":3,"parent":"6533916193823133696","children":[]}]},{"id":"6533917218659373061","path":"/user","locale":null,"name":"用户中心","icon":"user","orderIndex":2,"parent":null,"children":[{"id":"6533917345537069062","path":"/user/password","locale":null,"name":"修改密码","icon":null,"orderIndex":0,"parent":"6533917218659373061","children":[]}]},{"id":"6541132351248797696","path":"/frontdocs","locale":null,"name":"前端文档","icon":"read","orderIndex":3,"parent":null,"children":[{"id":"6541132579280523265","path":"/frontdocs/pageviewdoc","locale":null,"name":"分页组件","icon":null,"orderIndex":2,"parent":"6541132351248797696","children":[]},{"id":"6541585418129772545","path":"/frontdocs/createmodaldoc","locale":null,"name":"新建模态框","icon":null,"orderIndex":3,"parent":"6541132351248797696","children":[]},{"id":"6541595299213742082","path":"/frontdocs/updatemodaldoc","locale":null,"name":"修改模态框","icon":null,"orderIndex":4,"parent":"6541132351248797696","children":[]}]}],"success":true}</code></pre>
 </div>
 </div>
 </div>
@@ -487,6 +487,11 @@ Content-Type: application/json;charset=UTF-8
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>msg</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">提示消息</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>success</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是否成功</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>data[]</code></p></td>
@@ -547,7 +552,7 @@ Content-Type: application/json;charset=UTF-8
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-07-01 00:31:36 CST
+Last updated 2019-07-07 03:06:50 CST
 </div>
 </div>
 </body>

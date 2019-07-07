@@ -3,8 +3,8 @@
 === 接口返回码
 |===
 | 编码 | 名称
-| 0 | success
-| 1 | fail
+| 0 | fail
+| 1 | success
 | 9999 | exception
 | 1001 | no authentication
 | 1002 | access denied

@@ -7,7 +7,7 @@ import com.tamboot.admin.system.model.SystemUserModel;
 import com.tamboot.security.core.PasswordEncoderFactory;
 import com.tamboot.security.core.TambootUserDetails;
 import com.tamboot.security.util.SafeSecurityContextHolder;
-import com.tamboot.web.config.BusinessException;
+import com.tamboot.web.core.BusinessException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

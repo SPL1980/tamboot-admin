@@ -1,6 +1,6 @@
 package com.tamboot.admin.system.model;
 
-import com.tamboot.webapp.core.BaseModel;
+import com.tamboot.mybatis.core.BaseModel;
 
 public class SystemRoleMenuModel extends BaseModel {
     private static final long serialVersionUID = -2691232723896611382L;

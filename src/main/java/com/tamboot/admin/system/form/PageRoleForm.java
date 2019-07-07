@@ -1,6 +1,6 @@
 package com.tamboot.admin.system.form;
 
-import com.tamboot.admin.core.PageForm;
+import com.tamboot.common.web.PageForm;
 
 public class PageRoleForm extends PageForm {
     private String roleCodeLike;
