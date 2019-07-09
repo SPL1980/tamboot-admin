@@ -7,12 +7,12 @@
     <parent>
         <groupId>com.tamboot</groupId>
         <artifactId>tamboot-starter</artifactId>
-        <version>1.2.0.RELEASE</version>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <groupId>com.tamboot</groupId>
     <artifactId>tamboot-admin</artifactId>
-    <version>1.2.O.RELEASE</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <properties>
         <asciidoctor-maven-plugin.version>1.5.3</asciidoctor-maven-plugin.version>
