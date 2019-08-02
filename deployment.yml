@@ -2,20 +2,20 @@ apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
   labels:
-    app: tamboot-admin-back-app
+    app: tamboot-admin
     environment: product
     tier: backend
-  name: tamboot-admin-back-app
-  namespace: default
+  name: tamboot-admin
+  namespace: backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: tamboot-admin-back-app
+      app: tamboot-admin
   template:
     metadata:
       labels:
-        app: tamboot-admin-back-app
+        app: tamboot-admin
     spec:
       containers:
       - command:
@@ -30,9 +30,9 @@ spec:
         - name: JAVA_HOME
           value: /usr/lib/jvm/java-1.8-openjdk
         image: >-
-          registry-vpc.cn-shenzhen.aliyuncs.com/registry_tam/tamboot-admin-back:1.4.0.RELEASE
+          registry-vpc.cn-shenzhen.aliyuncs.com/registry_tam/tamboot-admin:1.5.0.RELEASE
         imagePullPolicy: Always
-        name: tamboot-admin-back-app
+        name: tamboot-admin
         resources:
           requests:
             cpu: 100m
@@ -54,22 +54,22 @@ spec:
         name: volume-tmp
       - configMap:
           defaultMode: 420
-          name: tamboot-admin-back-config
+          name: tamboot-admin-config
         name: volume-config
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: tamboot-admin-back-service
-  namespace: default
+  name: tamboot-admin-service
+  namespace: backend
 spec:
   ports:
-  - name: tamboot-admin-back-service
-    port: 8080
+  - name: tamboot-admin-service
+    port: 80
     protocol: TCP
-    targetPort: 8080
+    targetPort: 80
   selector:
-    app: tamboot-admin-back-app
+    app: tamboot-admin
   sessionAffinity: None
   type: ClusterIP
