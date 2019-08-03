@@ -65,7 +65,7 @@ metadata:
   namespace: backend
 spec:
   ports:
-  - name: tamboot-admin-service
+  - name: http
     port: 80
     protocol: TCP
     targetPort: 80
