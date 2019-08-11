@@ -20,7 +20,7 @@ spec:
       - command:
         - java
         - '-Xms64m'
-        - '-Xmx256m'
+        - '-Xmx512m'
         - '-jar'
         - app.jar
         env:
@@ -47,7 +47,7 @@ spec:
       restartPolicy: Always
       schedulerName: default-scheduler
       securityContext: {}
-      terminationGracePeriodSeconds: 30
+      terminationGracePeriodSeconds: 20
       volumes:
       - emptyDir: {}
         name: volume-tmp
