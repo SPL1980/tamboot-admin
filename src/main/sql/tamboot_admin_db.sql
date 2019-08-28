@@ -177,7 +177,7 @@ CREATE TABLE `system_user` (
 -- ----------------------------
 -- Records of system_user
 -- ----------------------------
-INSERT INTO `system_user` VALUES ('1', '0', null, null, '2019-06-02 22:43:43', '1', 'admin', '{bcrypt}$2a$10$XlxuthlC.aiqv4FQ0vk8N.2ECtkg4.4dKrAsRN9upqDLY5Or.YZja', '1');
+INSERT INTO `system_user` VALUES ('1', '0', null, null, '2019-06-02 22:43:43', '1', 'admin', '{bcrypt}$2a$10$wJ78miQmI0k7PL70bUkjIOqmvKm1tkEsnN2JWP6bjB.wNl6Hm61iq', '1');
 INSERT INTO `system_user` VALUES ('2', '0', null, null, '2019-06-02 12:56:17', '1', 'user', '{bcrypt}$2a$10$3lRGVEr06pErbsUxDqh1JeNocMA.pn/9SrRbS4WfyrZgXqRC87tyO', '0');
 
 -- ----------------------------
