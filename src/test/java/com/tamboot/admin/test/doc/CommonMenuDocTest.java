@@ -5,9 +5,13 @@ import com.tamboot.restdocs.mockmvc.TambootDocTest;
 import org.junit.Test;
 import org.springframework.restdocs.payload.JsonFieldType;
 import org.springframework.security.test.context.support.WithUserDetails;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
 
 @AsciidocConfig(title = "个人菜单", orderIndex = 1)
 @WithUserDetails
+@Transactional
+@Rollback
 public class CommonMenuDocTest extends TambootDocTest {
 
     @Test

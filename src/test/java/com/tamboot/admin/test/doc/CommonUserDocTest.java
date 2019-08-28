@@ -6,9 +6,13 @@ import com.tamboot.restdocs.mockmvc.TambootDocTest;
 import org.junit.Test;
 import org.springframework.restdocs.payload.JsonFieldType;
 import org.springframework.security.test.context.support.WithUserDetails;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
 
 @AsciidocConfig(title = "个人信息", orderIndex = 2)
 @WithUserDetails
+@Transactional
+@Rollback
 public class CommonUserDocTest extends TambootDocTest {
 
     @Test
