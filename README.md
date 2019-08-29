@@ -12,6 +12,7 @@ Tamboot Admin是一个基于 [Tamboot](https://github.com/chensheng/tamboot.git)
 * [安装依赖](#安装依赖)
 * [下载项目](#下载项目)
 * [创建数据库](#创建数据库)
+* [启动redis](#启动redis)
 * [最小配置](#最小配置)
 * [运行项目](#运行项目)
 * [返回值](#返回值)
@@ -28,11 +29,15 @@ $ mvn install
 
 ### 下载项目
 ```bash
-$ git clone https://github.com/chensheng/tamboot-admin-back.git tamboot-admin
+$ git clone https://github.com/chensheng/tamboot-admin.git
 ```
 
 ### 创建数据库
 数据库初始化文件在项目的`src/main/sql`目录下。
+
+### 启动redis
+由于系统的权限信息存储在redis中，所以需要启动redis，具体的redis安装启动步骤可查看[redis官网](https://redis.io/)。
+
 
 ### 最小配置
 修改配置文件`src/main/resources/application.yml`
